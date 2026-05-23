@@ -147,16 +147,11 @@ def get_sample_questions():
 
 
 if __name__ == '__main__':
-    print("\n" + "="*60)
+    print("\n" + "="*50)
     print("🚀 AI Interview Coach Backend Starting...")
-    print("="*60)
+    print("="*50)
     print(f"📍 Server: http://{Config.HOST}:{Config.PORT}")
-    print(f"🎭 Demo Mode: {'ENABLED (FREE)' if Config.DEMO_MODE else 'DISABLED (Using Claude API)'}")
-    print(f"🔑 API Key: {'Not required (Demo Mode)' if Config.DEMO_MODE else 'Loaded ✓'}")
-    print("="*60 + "\n")
+    print(f"🎭 Demo Mode: {'ON' if Config.DEMO_MODE else 'OFF'}")
+    print("="*50 + "\n")
     
-    app.run(
-        host=Config.HOST,
-        port=Config.PORT,
-        debug=Config.DEBUG
-    )
+    app.run(host='0.0.0.0', port=Config.PORT, debug=False)  # Changed for deployment
