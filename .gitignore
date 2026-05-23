@@ -1,0 +1,20 @@
+# .gitignore - Prevents sensitive files from being committed
+
+# Environment variables
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

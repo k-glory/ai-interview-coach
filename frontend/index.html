@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Coach - Practice & Improve</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🎯 AI Interview Coach</h1>
+            <p class="tagline">Practice. Get Feedback. Improve.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Question Selection Card -->
+        <section class="card">
+            <h2>📝 Select Interview Type</h2>
+            <div class="question-type-buttons">
+                <button class="type-btn active" data-type="technical">💻 Technical</button>
+                <button class="type-btn" data-type="behavioral">🧠 Behavioral</button>
+                <button class="type-btn" data-type="system_design">🏗️ System Design</button>
+            </div>
+        </section>
+
+        <!-- Question Display Card -->
+        <section class="card question-card">
+            <h2>❓ Interview Question</h2>
+            <div class="question-selector">
+                <select id="questionSelect" class="question-dropdown">
+                    <option value="">Loading questions...</option>
+                </select>
+                <button id="randomBtn" class="btn-secondary">🎲 Random</button>
+            </div>
+            <div class="question-display" id="questionDisplay">
+                Select a question type to begin...
+            </div>
+        </section>
+
+        <!-- Answer Input Card -->
+        <section class="card">
+            <h2>✍️ Your Answer</h2>
+            <textarea 
+                id="answerInput" 
+                class="answer-textarea" 
+                placeholder="Type your answer here... Be specific and include examples!"
+                rows="8"
+            ></textarea>
+            
+            <div class="action-buttons">
+                <button id="evaluateBtn" class="btn-primary">
+                    🚀 Evaluate My Answer
+                </button>
+                <button id="clearBtn" class="btn-secondary">
+                    🗑️ Clear
+                </button>
+            </div>
+            
+            <div class="word-count">
+                Words: <span id="wordCount">0</span> | 
+                Characters: <span id="charCount">0</span>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>AI is evaluating your answer...</p>
+        </div>
+
+        <!-- Results Card -->
+        <section id="resultsCard" class="card results-card" style="display: none;">
+            <h2>📊 Evaluation Results</h2>
+            
+            <!-- Score Display -->
+            <div class="score-container">
+                <div class="score-circle">
+                    <div class="score-value" id="scoreValue">0</div>
+                    <div class="score-label">Score</div>
+                </div>
+                <div class="grade-badge" id="gradeBadge">-</div>
+            </div>
+
+            <!-- Demo Mode Warning -->
+            <div id="demoWarning" class="demo-warning" style="display: none;">
+                🎭 Demo Mode Active - This is a simulated response. Connect Claude API for real AI evaluation.
+            </div>
+
+            <!-- Strengths -->
+            <div class="feedback-section">
+                <h3 class="section-title">✅ Strengths</h3>
+                <ul id="strengthsList" class="feedback-list"></ul>
+            </div>
+
+            <!-- Weaknesses -->
+            <div class="feedback-section">
+                <h3 class="section-title">⚠️ Areas for Improvement</h3>
+                <ul id="weaknessesList" class="feedback-list"></ul>
+            </div>
+
+            <!-- Improved Answer -->
+            <div class="feedback-section">
+                <h3 class="section-title">💡 Improved Answer</h3>
+                <div id="improvedAnswer" class="improved-answer"></div>
+            </div>
+
+            <!-- Tips -->
+            <div class="feedback-section">
+                <h3 class="section-title">🎯 Pro Tips</h3>
+                <ul id="tipsList" class="feedback-list"></ul>
+            </div>
+
+            <!-- Missing Keywords -->
+            <div class="feedback-section">
+                <h3 class="section-title">🔑 Keywords to Include</h3>
+                <div id="keywordsList" class="keywords-container"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="tryAgainBtn" class="btn-primary">
+                    🔄 Try Another Question
+                </button>
+                <button id="copyFeedbackBtn" class="btn-secondary">
+                    📋 Copy Feedback
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Built with ❤️ for interview success | Powered by Claude AI</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
